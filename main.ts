@@ -2,7 +2,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     otherSprite.destroy(effects.fire, 200)
     otherSprite.destroy()
     info.changeScoreBy(1)
-    if (info.score() > 50) {
+    if (info.score() > 25) {
         game.over(true)
     }
 })
@@ -178,7 +178,7 @@ Mi_Nave = sprites.create(img`
 `, SpriteKind.Player)
 Mi_Nave.setFlag(SpriteFlag.StayInScreen, true)
 controller.moveSprite(Mi_Nave, 200, 200)
-game.showLongText("Para disparar pulse el botón A. Para ganar debe destruir 50 naves enemigas", DialogLayout.Bottom)
+game.showLongText("Para disparar pulse el botón A. Para ganar debe destruir 25 naves enemigas", DialogLayout.Bottom)
 game.onUpdateInterval(500, function () {
     Enemigo_dart = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -199,6 +199,6 @@ game.onUpdateInterval(500, function () {
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
     Enemigo_dart.lifespan = 2000
-    Enemigo_dart.setVelocity(-100, 0)
+    Enemigo_dart.setVelocity(-75, 0)
     Enemigo_dart.setPosition(180, Math.randomRange(0, 120))
 })
